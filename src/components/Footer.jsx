@@ -8,6 +8,7 @@ import { styles } from '../styles';
 import { FaLocationArrow } from 'react-icons/fa';
 import linkedin from '../assets/socialsSvgs/linkedin.png'
 import { github } from '../assets';
+import { Link } from 'react-router-dom';
 
 
 const Footer=()=>{
@@ -77,7 +78,7 @@ const Footer=()=>{
                 md:
                 text-center
                 inline-flex ml-32 md:ml-10 w-full mt-7 text-sm md:font-normal font-light">
-                Copyright © 2024 Yash Raj Singh
+                Copyright © 2025 Yash Raj Singh
                 </p>
                 <div className='w-full gap-3 mr-3 md:justify-end
                 justify-center items center flex flex-col md:flex-row'>
@@ -108,6 +109,15 @@ const Footer=()=>{
                 <div className='w-fit mx-auto md:m-0 flex justify-center gap-3 m-0 p-0'>
                 <a href="https://www.linkedin.com/in/yash-raj-singh-b48756256/" target="_blank" rel="noreferrer"><MagicIcon img={linkedin} /></a>
                 <a href="https://github.com/yashraj1706" target="_blank" rel="noreferrer"><MagicIcon img={github} {...`w-10`}   /></a>    
+                {/* <Link to={`/resume`}> */}
+                {/* <a href="/resume" target="_blank" rel="noopener noreferrer">
+                      <MagicButton
+                        title="View My Resume"
+                        icon={<IoCopyOutline />}
+                        positoion="left"
+                      />
+                </a> */}
+                {/* </Link> */}
                 </div>
                 </div>
         </div>

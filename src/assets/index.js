@@ -39,6 +39,7 @@ import rapidApi from './tech/rapidApi.png';
 import jquery from './tech/jquery.png'; 
 import bootstrap from './tech/bootstrap.png'; 
 import wordpress from './tech/wordpress.png'; 
+import deloitte from './deloitte.png';
 
 import eduskills from './company/eduskills.jpeg'
 import codingNinjas from './company/codingNinjas.jpg'
@@ -47,6 +48,8 @@ import internpe from './company/internpe.jpeg'
 import sih from './company/sih.jpeg'
 import uipath from './company/uipath.jpeg'
 import knx from './company/knx.jpeg'
+import elabs from './elabs_logo.jpeg'
+import accenture from './company/accenture.png'
 
 
 import blogApp from './projectSvgs/blogApp.png'
@@ -66,6 +69,7 @@ export {
   logo,
   logoColor,
   backend,
+  deloitte,
   creator,
   mobile,
   web,
@@ -81,6 +85,8 @@ export {
   javascript,
   mongodb,
   nodejs,
+  elabs,
+  accenture,
   reactjs,
   redux,
   tailwind,

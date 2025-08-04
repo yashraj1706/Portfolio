@@ -22,7 +22,7 @@ const ExperienceCard=({experience})=>(
       icon={
         <div>
           <img src={experience.icon} alt={experience.company_name}
-            className='w-[100%] h-[100%] rounded-full object-cover mx-auto'
+            className={`rounded-full object-cover my-auto mx-auto ${(experience.company_name=="Accenture")?`w-[65%] h-[65%] mt-[12px] ml-[22.5%] p-[0px] m-auto rounded-none`:(experience.company_name=="Deloitte")?`mt-6 w-[95%]`:`w-[100%] h-[100%]`}`}
           />
         </div>
       }
