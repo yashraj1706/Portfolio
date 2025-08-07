@@ -16,8 +16,10 @@
     "@react-pdf/renderer": "^4.1.6",
     "@react-three/drei": "^9.108.4",
     "@react-three/fiber": "^8.16.8",
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.10.40",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.12",
+    "framer-motion": "^11.18.2",
     "maath": "^0.10.8",
     "pdfjs-dist": "^4.10.38",
     "react": "^18.3.1",
@@ -29,7 +31,7 @@
     "react-tilt": "^1.0.2",
     "react-type-animation": "^3.2.0",
     "react-vertical-timeline-component": "^3.6.0",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.6.0",
     "three": "^0.166.1"
   },
   "devDependencies": {

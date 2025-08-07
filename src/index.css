@@ -8,6 +8,40 @@ html, body {
   overflow-x: clip;
 }
 
+.highlight-word {
+  color: #915EFF;
+}
+
+.spline-watermark,
+[data-spline-watermark] {
+  display: none !important;
+}
+.spline-watermark,
+[class*="watermark"],
+a[href*="spline.design"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+canvas + div,
+canvas ~ div:last-child {
+  display: none !important;
+}
+
+/* Highlight animation for technical terms */
+.highlight-word {
+  color: #915EFF;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Animation for text typing */
+.typed-text span:has(strong) {
+  color: #915EFF;
+  font-weight: 600;
+}
+
 * {
   margin: 0;
   padding: 0;

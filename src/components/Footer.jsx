@@ -109,15 +109,13 @@ const Footer=()=>{
                 <div className='w-fit mx-auto md:m-0 flex justify-center gap-3 m-0 p-0'>
                 <a href="https://www.linkedin.com/in/yash-raj-singh-b48756256/" target="_blank" rel="noreferrer"><MagicIcon img={linkedin} /></a>
                 <a href="https://github.com/yashraj1706" target="_blank" rel="noreferrer"><MagicIcon img={github} {...`w-10`}   /></a>    
-                {/* <Link to={`/resume`}> */}
-                {/* <a href="/resume" target="_blank" rel="noopener noreferrer">
+                <a href="/resume" target="_blank" rel="noopener noreferrer">
                       <MagicButton
                         title="View My Resume"
                         icon={<IoCopyOutline />}
                         positoion="left"
                       />
-                </a> */}
-                {/* </Link> */}
+                </a>
                 </div>
                 </div>
         </div>

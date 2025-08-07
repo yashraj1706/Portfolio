@@ -31,7 +31,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+        scrolled ? "bg-primary bg-opacity-" : "bg-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -74,6 +74,7 @@ const Navbar = () => {
           ><a href="/resume" target="_blank" rel="noopener noreferrer">
               Resume
           </a></li>
+          <Link to='/certifications'>certs</Link>
         </ul>
 
         <div className="xs:hidden flex flex-1 justify-end items-center">
@@ -104,6 +105,16 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li
+                  key="Resume"
+                  className={`${
+                      active === "Resume" ? "text-white" : "text-secondary"
+                    } hover:text-white text-[18px] font-medium cursor-pointer`}
+              >
+                <a href="/resume" target="_blank" rel="noopener noreferrer">
+                    Resume
+                </a>
+              </li>
             </ul>
           </div>
         </div>

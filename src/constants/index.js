@@ -171,7 +171,7 @@ import {
       company_name: "E-Labs (Peer-to-Peer Learning Society)",
       icon: elabs,
       iconBg: "#383E56",
-      date: "Dec 2023 - Aug 2024",
+      date: "Dec 2023 - Present",
       points: [
         "Taught 100+ underclassmen core DSA concepts like Stacks and Queues via structured academic workshops",
         "Conducted comprehensive workshops for 300+ on Web Development.",
@@ -263,6 +263,43 @@ import {
     company: "Accenture",
     image: "https://randomuser.me/api/portraits/women/10.jpg",
   }
+];
+
+export const certCategories = [
+  {
+    id: "ai",
+    title: "Artificial Intelligence",
+    description: "Courses and certifications in AI, ML, and Deep Learning.",
+    color: "#915EFF",
+    certs: [
+      {
+        id: "ml-foundations",
+        title: "Machine Learning Foundations",
+        provider: "Coursera",
+        url: "https://coursera.org/verify/xyz123",
+      },
+      // ...more AI certs
+    ],
+  },
+  {
+    id: "cloud",
+    title: "Cloud & DevOps",
+    description: "Cloud certifications and DevOps skills.",
+    color: "#36D399",
+    certs: [
+      // ...cloud certs
+    ],
+  },
+  {
+    id: "fullstack",
+    title: "Full Stack Development",
+    description: "Web, mobile, and backend certifications.",
+    color: "#FBBF24",
+    certs: [
+      // ...fullstack certs
+    ],
+  },
+  // Add more categories as needed
 ];
 
   // const testimonials = [

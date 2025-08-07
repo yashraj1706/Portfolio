@@ -19,7 +19,21 @@ module.exports = {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
+        "hero-pattern": "url('/src/assets/herobg1.png')",
+      },
+      animation: {
+          "marquee-horizontal": "marquee-horizontal var(--duration) linear infinite",
+          "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        },
+        keyframes: {
+          "marquee-horizontal": {
+            from: { transform: "translateX(0)" },
+            to: { transform: "translateX(calc(-100% - var(--gap)))" },
+          },
+          "marquee-vertical": {
+            from: { transform: "translateY(0)" },
+            to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
     },
   },
