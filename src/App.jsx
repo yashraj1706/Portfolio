@@ -1,5 +1,5 @@
 import React from 'react';
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, Feedbacks, CertificationsPreview, Certifications } from './components';
+import { About, Contact, Experience, Hero, Navbar, Tech, Projects, StarsCanvas, Testimonials, CertificationsPreview, Certifications } from './components';
 import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Resume from './components/Resume';
@@ -26,9 +26,9 @@ const App = () => {
               <About />
               <Experience />
               <AchievementsMarquee />
-              <Tech />
-              <Works />
-              <Feedbacks />
+              {/* <Tech /> */}
+              <Projects />
+              <Testimonials />
               {/* <StarsCanvas /> */}
               <div className="relative z-0">
                 <Contact />

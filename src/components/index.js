@@ -4,8 +4,8 @@ import Navbar from './Navbar';
 import About from './About';
 import Tech from './Tech';
 import Experience from './Experience';
-import Works from './Works';
-import Feedbacks from './Feedbacks';
+import Projects from './Projects';
+import Testimonials from './Testimonials';
 import Contact from './Contact';
 import CertificationsPreview from "./CertificationsPreview";
 import Certifications from "./Certifications";
@@ -18,8 +18,8 @@ export {
   About,
   Tech,
   Experience,
-  Works,
-  Feedbacks,
+  Projects,
+  Testimonials,
   Contact,
   EarthCanvas, 
   BallCanvas, 

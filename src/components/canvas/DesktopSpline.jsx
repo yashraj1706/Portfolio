@@ -22,14 +22,26 @@
 // }
 
 import Spline from '@splinetool/react-spline';
+import  {LoaderFour}  from '../ui/LoaderFour';
+import { useState } from "react";
 
 export default function DesktopSpline() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <Spline
-        scene="https://prod.spline.design/0J1ODbEjN6Yd4y9J/scene.splinecode" //computer and lamp
-        // scene="https://prod.spline.design/y1KoZrVnxEXv348M/scene.splinecode" // particles
-        style={{scale:'1'}}
-        // className='scale-[1]'
-    />
+    <div className="relative w-full h-full overflow-hidden">
+        {isLoading && (
+            <div className="w-full h-full flex justify-center items-center" >
+              <LoaderFour />
+            </div>
+          
+        )}
+        <Spline
+            scene="https://prod.spline.design/0J1ODbEjN6Yd4y9J/scene.splinecode" //computer and lamp
+            // scene="https://prod.spline.design/y1KoZrVnxEXv348M/scene.splinecode" // particles
+            className="!w-[110%] !h-[110%] absolute top-0 left-0"
+            onLoad={() => setIsLoading(false)}
+        />
+    </div>   
   );
 }

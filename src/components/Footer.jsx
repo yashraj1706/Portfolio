@@ -54,12 +54,12 @@ const Footer=()=>{
       }) => {
         return (
           <button
-            className="relative  cursor-pointer inline-flex h-12 w-fit md:w-fit md:mt-10 overflow-clip rounded-lg p-[1px] hover:p-[2px] duration-300 focus:outline-none"
+            className="relative  cursor-pointer  inline-flex h-12 w-fit md:w-fit md:mt-10 overflow-clip rounded-lg p-[1px] hover:p-[2px] duration-300 focus:outline-none"
             onClick={handleClick}
           >
             <span className="absolute text-center inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
             <span
-              className={`inline-flex h-full w-full cursor-default items-center justify-center rounded-lg
+              className={`inline-flex  h-full w-full cursor-default items-center justify-center rounded-lg
                    bg-slate-950 px-0  text-sm font-medium text-white backdrop-blur-3xl  ${otherClasses}`}
             >
                   <div>
@@ -114,6 +114,7 @@ const Footer=()=>{
                         title="View My Resume"
                         icon={<IoCopyOutline />}
                         positoion="left"
+                        otherClasses="!bg-[#161A31]"
                       />
                 </a>
                 </div>

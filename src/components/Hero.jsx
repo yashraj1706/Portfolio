@@ -85,7 +85,7 @@ const Hero = () => {
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col md:mt-0 mt-20">
           <h1 className={`${styles.heroHeadText} z-[10] text-white w-full`}>
             Hi, I'm{" "}
             <span
@@ -105,8 +105,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2 z-[10] text-white-100`}>
             <TypeAnimation
               sequence={[
-                `I craft solutions with GenAI, LLMs, RAG, and 
-                \nAgentic AI workflows.`,
+                `I craft solutions with GenAI, LLMs, RAG, and\nAgentic AI workflows.`,
                 2500,
                 'I build Full-stack Web & Mobile Apps.',
                 2500,
@@ -116,7 +115,7 @@ const Hero = () => {
               wrapper="span"
               speed={100}
               style={{ display: "inline-block" }}
-              className="text-white-100"
+              className="text-white-100 md:whitespace-pre-wrap"
               repeat={Infinity}
               cursor={true}
               deletionSpeed={10}

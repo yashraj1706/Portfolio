@@ -34,7 +34,7 @@
 //           </button>
 //         );
 //       };
-// const FeedbackCard = ({
+// const TestimonialCard = ({
 //   index,
 //   testimonial,
 //   name,
@@ -50,7 +50,7 @@
 //       <p className='text-white font-black text-[48px]'>"</p>
 
 //     <div className='mt-1'>
-//       <p className='text-white tracking-wider text-[18px]'>{testimonial}</p>
+//       <p className='text-white tracking-wider md:text-[18px] text-[14px]'>{testimonial}</p>
 
 //       <div className='mt-7 flex justify-between items-center gap-1'>
 //         <div className='flex-1 flex flex-col'>
@@ -99,7 +99,7 @@
 //       </div>
 //       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap justify-around gap-5`}>
 //         {testimonials.map((testimonial, index) => (
-//             <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+//             <TestimonialCard key={testimonial.name} index={index} {...testimonial} />
 //         ))}
 //       </div>
 //     </div>
@@ -141,7 +141,7 @@ const MagicButton = ({ title, icon, position, handleClick, otherClasses }) => {
 };
 import { useState } from "react";
 
-const FeedbackCard = ({
+const TestimonialCard = ({
   index,
   testimonial,
   name,
@@ -172,9 +172,9 @@ const FeedbackCard = ({
       className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full "
     >
       <p className="text-white font-black text-[48px]">"</p>
-      <div className="mt-1">
+      <div className="mt-1 mb-2">
         {!showFull ? (
-          <p className="text-white tracking-wider text-[18px] mb-3 last:mb-0">
+          <p className="text-white tracking-wider md:text-[18px] text-[14px] mb-3 last:mb-0">
             {words.slice(0, previewWordCount).join(" ")}
             {isLong && !showFull ? "..." : ""}
           </p>
@@ -182,7 +182,7 @@ const FeedbackCard = ({
           paragraphs.map((p, i) => (
             <p
               key={i}
-              className="text-white tracking-wider text-[18px] mb-3 last:mb-0"
+              className="text-white tracking-wider md:text-[18px] text-[14px] mb-3 last:mb-0"
             >
               {p}
             </p>
@@ -221,18 +221,19 @@ const FeedbackCard = ({
           />
         </div>
       </div>
-      <a href={linkedInRecsUrl} target="_blank" rel="noopener noreferrer">
+      <a href={linkedInRecsUrl} target="_blank" rel="noopener noreferrer" >
         <MagicButton
           title="View on LinkedIn"
           icon={<img src={linkedInImg} alt="LinkedIn" />}
           positoion="left"
+          className=""
         />
       </a>
     </motion.div>
   );
 };
 
-const Feedbacks = () => {
+const Testimonials = () => {
   return (
     <div className={`mt-0 sm:mt-12  bg-black-100 rounded-[20px] block`}>
       <div
@@ -247,11 +248,11 @@ const Feedbacks = () => {
         className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap justify-around gap-5`}
       >
         {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+          <TestimonialCard key={testimonial.name} index={index} {...testimonial} />
         ))}
       </div>
     </div>
   );
 };
 
-export default SectionWrapper(Feedbacks, "testimonials");
+export default SectionWrapper(Testimonials, "testimonials");

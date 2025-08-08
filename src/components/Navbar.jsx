@@ -25,6 +25,30 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const MagicButton = ({
+    title,
+    icon,
+    position,
+    handleClick,
+    otherClasses,
+  }) => {
+    return (
+      <button
+        className="relative inline-flex h-12 w-full  md:w-fit  overflow-hidden rounded-lg p-[1px] focus:outline-none"
+        onClick={handleClick}
+      >
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        <span
+          className={`inline-flex h-full w-fit cursor-pointer items-center justify-center rounded-lg
+                   bg-slate-950 px-4 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
+        >
+          {position === "left" && icon}
+          {title}
+          {position === "right" && icon}
+        </span>
+      </button>
+    );
+  };
 
   return (
     <nav
@@ -37,7 +61,7 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 order-1"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -54,7 +78,7 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden sm:flex flex-row gap-10 order-2">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -67,17 +91,30 @@ const Navbar = () => {
             </li>
           ))}
           <li
-            key="Resume"
+            key="Certificates"
             className={`${
-                active === "Resume" ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-          ><a href="/resume" target="_blank" rel="noopener noreferrer">
-              Resume
-          </a></li>
-          <Link to='/certifications'>certs</Link>
+              active === "Resume" ? "text-white" : "text-secondary"
+            } hover:text-white text-[18px] font-medium cursor-pointer`}
+          >
+            <Link to="/certifications">Certificates</Link>
+          </li>
         </ul>
 
-        <div className="xs:hidden flex flex-1 justify-end items-center">
+        <a
+          href="/resume"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="order-2 md:mr-0 mr-10 list-none hidden sm:flex" 
+        >
+          <MagicButton
+            title="Resume"
+            icon=""
+            positoion="left"
+            otherClasses="!bg-[#161A31]"
+          />
+        </a>
+
+        <div className="xs:hidden flex  justify-end items-center order-2">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -105,16 +142,19 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
-              <li
-                  key="Resume"
-                  className={`${
-                      active === "Resume" ? "text-white" : "text-secondary"
-                    } hover:text-white text-[18px] font-medium cursor-pointer`}
+              <a
+                href="/resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="order-2 md:mr-0 mr-10"
               >
-                <a href="/resume" target="_blank" rel="noopener noreferrer">
-                    Resume
-                </a>
-              </li>
+                <MagicButton
+                  title="Resume"
+                  icon=""
+                  positoion="left"
+                  otherClasses="!bg-[#161A31]"
+                />
+              </a>
             </ul>
           </div>
         </div>

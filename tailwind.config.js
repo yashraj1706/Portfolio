@@ -19,11 +19,14 @@ module.exports = {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg1.png')",
+        // "hero-pattern": "url('/src/assets/herobg1.png')",
       },
       animation: {
           "marquee-horizontal": "marquee-horizontal var(--duration) linear infinite",
           "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+          "loader-4": "loader-4 1.2s linear infinite",
+          "shimmer": "shimmer 2s linear infinite",
+
         },
         keyframes: {
           "marquee-horizontal": {
@@ -33,7 +36,23 @@ module.exports = {
           "marquee-vertical": {
             from: { transform: "translateY(0)" },
             to: { transform: "translateY(calc(-100% - var(--gap)))" },
-        },
+          },
+          "loader-4": {
+            "0%": {
+              transform: "rotate(0deg)",
+            },
+            "100%": {
+              transform: "rotate(360deg)",
+            },
+            "shimmer": {
+              from: {
+                backgroundPosition: "0 0",
+              },
+              to: {
+                backgroundPosition: "-200% 0",
+              },
+            },
+          },
       },
     },
   },
