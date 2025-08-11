@@ -35,13 +35,13 @@ const Navbar = () => {
   }) => {
     return (
       <button
-        className="relative inline-flex h-8 w-full  md:w-fit  overflow-hidden rounded-3xl p-[1.5px] focus:outline-none"
+        className="relative inline-flex h-10 w-full  md:w-fit  overflow-hidden rounded-lg p-[1.5px] focus:outline-none"
         onClick={handleClick}
       >
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
         <span
-          className={`inline-flex h-full text-[24px] w-fit cursor-pointer items-center justify-center rounded-3xl
-                   bg-slate-950 px-6 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
+          className={`inline-flex h-full text-[20px] w-fit cursor-pointer items-center justify-center rounded-lg
+                   bg-slate-950 px-8 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
         >
           {position === "left" && icon}
           {title}
@@ -91,24 +91,24 @@ const Navbar = () => {
                 active === nav.title
                   ? "text-white border-b-2 border-white"
                   : "text-secondary"
-              } hover:text-white hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
+              } hover:text-white transition-all duration-200 hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-          <li
+          {/* <li
             key="Certificates"
             className={`${
               active === "Certificates" ? "text-white border-b-2 border-white"
                   : "text-secondary"
-              } hover:text-white hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
+              } hover:text-white transition-all duration-200 hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
           >
             <Link to="/certifications">Certificates</Link>
-          </li>
+          </li> */}
         </ul>
 
-        <a
+        {/* <a
           href="/resume"
           target="_blank"
           rel="noopener noreferrer"
@@ -120,7 +120,7 @@ const Navbar = () => {
             positoion="left"
             otherClasses="!bg-[#161A31]"
           />
-        </a>
+        </a> */}
 
         <div className="xs:hidden flex  justify-end items-center order-2">
           <img
@@ -150,7 +150,7 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
-              <a
+              {/* <a
                 href="/resume"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -162,7 +162,7 @@ const Navbar = () => {
                   positoion="left"
                   otherClasses="!bg-[#161A31] "
                 />
-              </a>
+              </a> */}
             </ul>
           </div>
         </div>

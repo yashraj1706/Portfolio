@@ -20,11 +20,11 @@ const Resume = lazy(() => import("./components/Resume"));
 const AchievementsMarquee = lazy(() =>
   import("./components/AchievementsMarquee")
 );
-const CanvasRevealEffectDemo = lazy(() =>
-  import("./components/CanvasRevealEffectDemo").then((m) => ({
-    default: m.CanvasRevealEffectDemo,
-  }))
-);
+// const CanvasRevealEffectDemo = lazy(() =>
+//   import("./components/CanvasRevealEffectDemo").then((m) => ({
+//     default: m.CanvasRevealEffectDemo,
+//   }))
+// );
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
 const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
@@ -72,10 +72,6 @@ const App = () => {
                   <InViewMount>
                     <About />
                   </InViewMount>
-
-                  <InViewMount>
-                    <CanvasRevealEffectDemo />
-                  </InViewMount>
                   
                   <InViewMount>
                     <Experience />
@@ -89,9 +85,9 @@ const App = () => {
                     <TechStack />
                   </InViewMount>
                   
-                  <InViewMount>
+                  {/* <InViewMount>
                     <Projects />
-                  </InViewMount>
+                  </InViewMount> */}
                   
                   <InViewMount>
                     <Testimonials />

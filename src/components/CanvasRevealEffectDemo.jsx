@@ -13,13 +13,13 @@ export function CanvasRevealEffectDemo() {
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
-            containerClassName="bg-emerald-900"
+            containerClassName="bg-emerald-600"
           />
         </Card>
 
         <Card
           title="Fullstack Developer"
-          body="I build scalable web and app solutions with modern frameworks, databases, and API architectures — delivering high-performance products with polished UX."
+          body="I build scalable web and app solutions with modern frameworks, databases, and API architectures. Delivering high-performance products with polished UX."
         >
           <CanvasRevealEffect
             animationSpeed={3}

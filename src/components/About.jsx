@@ -7,68 +7,69 @@ import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import "../index.css";
-import SmartImage from "./ui/SmartImage";
+import { CanvasRevealEffectDemo } from "./CanvasRevealEffectDemo";
+// import SmartImage from "./ui/SmartImage";
 
-const ServiceCard = ({ index, title, icon }) => {
-  return (
-    <Tilt className="xs:w-[250px] w-full card select-none ">
-      <motion.div
-        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-      >
-        <div
-          className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-        >
-          <SmartImage
-            src={icon}
-            alt={title}
-            width={64}
-            height={64}
-            className="w-16 h-16 object-contain"
-          />
-          <h3 className="text-white font-bold text-center text-[20px]">
-            {title}
-          </h3>
-        </div>
-      </motion.div>
-    </Tilt>
-  );
-};
+// const ServiceCard = ({ index, title, icon }) => {
+//   return (
+//     <Tilt className="xs:w-[250px] w-full card select-none ">
+//       <motion.div
+//         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+//         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+//       >
+//         <div
+//           className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+//           options={{
+//             max: 45,
+//             scale: 1,
+//             speed: 450,
+//           }}
+//         >
+//           <SmartImage
+//             src={icon}
+//             alt={title}
+//             width={64}
+//             height={64}
+//             className="w-16 h-16 object-contain"
+//           />
+//           <h3 className="text-white font-bold text-center text-[20px]">
+//             {title}
+//           </h3>
+//         </div>
+//       </motion.div>
+//     </Tilt>
+//   );
+// };
 
 const About = () => {
-  const cardsRef = useRef(null);
+  // const cardsRef = useRef(null);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const cards = cardsRef.current.getElementsByClassName("card");
-      for (const card of cards) {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+  // useEffect(() => {
+  //   const handleMouseMove = (e) => {
+  //     const cards = cardsRef.current.getElementsByClassName("card");
+  //     for (const card of cards) {
+  //       const rect = card.getBoundingClientRect();
+  //       const x = e.clientX - rect.left;
+  //       const y = e.clientY - rect.top;
 
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
-      }
-    };
+  //       card.style.setProperty("--mouse-x", `${x}px`);
+  //       card.style.setProperty("--mouse-y", `${y}px`);
+  //     }
+  //   };
 
-    const cardsElement = cardsRef.current;
-    if (cardsElement) {
-      cardsElement.addEventListener("mousemove", handleMouseMove, {
-        passive: true,
-      });
-    }
+  //   const cardsElement = cardsRef.current;
+  //   if (cardsElement) {
+  //     cardsElement.addEventListener("mousemove", handleMouseMove, {
+  //       passive: true,
+  //     });
+  //   }
 
-    return () => {
-      if (cardsElement) {
-        cardsElement.removeEventListener("mousemove", handleMouseMove);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (cardsElement) {
+  //       cardsElement.removeEventListener("mousemove", handleMouseMove);
+  //     }
+  //   };
+  // }, []);
   return (
     <>
       <motion.div className="mt-10" variants={textVariant()}>
@@ -110,11 +111,12 @@ const About = () => {
         I’m passionate about building meaningful tech, learning fast, and
         solving hard problems with elegant code.
       </motion.p>
-      <div className="mt-20  cards flex flex-wrap gap-10 " ref={cardsRef}>
+      {/* <div className="mt-20  cards flex flex-wrap gap-10 " ref={cardsRef}>
         {services.map((service, index) => {
           return <ServiceCard key={service.title} index={index} {...service} />;
         })}
-      </div>
+      </div> */}
+      <CanvasRevealEffectDemo />
     </>
   );
 };
