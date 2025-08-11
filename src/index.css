@@ -328,3 +328,19 @@ canvas ~ div:last-child {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+@keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg))
+      translateY(calc((var(--radius) + var(--offset, 0)) * 1px))
+      rotate(calc(var(--angle) * -1deg));
+  }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg))
+      translateY(calc((var(--radius) + var(--offset, 0)) * 1px))
+      rotate(calc((var(--angle) * -1deg) - 360deg));
+  }
+}
+.animate-orbit { animation: orbit calc(var(--duration, 20) * 1s) linear infinite; }
+.animate-orbit-reverse { animation: orbit calc(var(--duration, 20) * 1s) linear infinite reverse; }
+

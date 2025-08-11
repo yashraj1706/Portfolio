@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, logoColor, menu, close } from "../assets";
+import SmartImage from "./ui/SmartImage";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -34,13 +35,13 @@ const Navbar = () => {
   }) => {
     return (
       <button
-        className="relative inline-flex h-12 w-full  md:w-fit  overflow-hidden rounded-lg p-[1px] focus:outline-none"
+        className="relative inline-flex h-8 w-full  md:w-fit  overflow-hidden rounded-3xl p-[1.5px] focus:outline-none"
         onClick={handleClick}
       >
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
         <span
-          className={`inline-flex h-full w-fit cursor-pointer items-center justify-center rounded-lg
-                   bg-slate-950 px-4 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
+          className={`inline-flex h-full text-[24px] w-fit cursor-pointer items-center justify-center rounded-3xl
+                   bg-slate-950 px-6 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
         >
           {position === "left" && icon}
           {title}
@@ -55,7 +56,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary bg-opacity-" : "bg-transparent"
+        scrolled ? "bg-primary border-b-2 border-white bg-opacity-" : "bg-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -67,15 +68,19 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img
+          <SmartImage
             src={logoColor}
             alt="logo"
+            width={36}
+            height={36}
             className="w-9 h-9 object-contain rounded-md"
+            loading="eager"
+            decoding="async"
           />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
+          {/* <p className="text-white text-[18px] font-bold cursor-pointer flex ">
             Yash&nbsp;
             <span className="sm:block hidden"> | YRS</span>
-          </p>
+          </p> */}
         </Link>
 
         <ul className="list-none hidden sm:flex flex-row gap-10 order-2">
@@ -83,8 +88,10 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+                active === nav.title
+                  ? "text-white border-b-2 border-white"
+                  : "text-secondary"
+              } hover:text-white hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -93,8 +100,9 @@ const Navbar = () => {
           <li
             key="Certificates"
             className={`${
-              active === "Resume" ? "text-white" : "text-secondary"
-            } hover:text-white text-[18px] font-medium cursor-pointer`}
+              active === "Certificates" ? "text-white border-b-2 border-white"
+                  : "text-secondary"
+              } hover:text-white hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
           >
             <Link to="/certifications">Certificates</Link>
           </li>
@@ -104,7 +112,7 @@ const Navbar = () => {
           href="/resume"
           target="_blank"
           rel="noopener noreferrer"
-          className="order-2 md:mr-0 mr-10 list-none hidden sm:flex" 
+          className="order-2 md:mr-0 mr-10 list-none hidden sm:flex"
         >
           <MagicButton
             title="Resume"
@@ -127,7 +135,7 @@ const Navbar = () => {
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-6">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
@@ -146,13 +154,13 @@ const Navbar = () => {
                 href="/resume"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="order-2 md:mr-0 mr-10"
+                className="order-2 md:mr-0"
               >
                 <MagicButton
                   title="Resume"
                   icon=""
                   positoion="left"
-                  otherClasses="!bg-[#161A31]"
+                  otherClasses="!bg-[#161A31] "
                 />
               </a>
             </ul>

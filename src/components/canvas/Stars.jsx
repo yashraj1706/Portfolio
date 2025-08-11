@@ -7,7 +7,7 @@ import { Points,PointMaterial,Preload } from '@react-three/drei'
 const Stars = (props) => {
   const ref= useRef();
 
-  const [sphere]=useState(()=> random.inSphere(new Float32Array(5000),{radius:1.2}))
+  const [sphere]=useState(()=> random.inSphere(new Float32Array(500),{radius:1.2}))
   
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -28,6 +28,7 @@ const Stars = (props) => {
             transparent
             color="#f272c8"
             size={0.002}
+            // size={0.0005} // use when app needs stars
             sizeAttenuation={true}
             depthWrite={false}
           />

@@ -9,6 +9,7 @@ import Testimonials from './Testimonials';
 import Contact from './Contact';
 import CertificationsPreview from "./CertificationsPreview";
 import Certifications from "./Certifications";
+import TechStack from './TechStack';
 
 export {
   Hero,
@@ -17,6 +18,7 @@ export {
   Certifications,
   About,
   Tech,
+  TechStack,
   Experience,
   Projects,
   Testimonials,

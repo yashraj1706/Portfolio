@@ -7,6 +7,7 @@ import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import "../index.css";
+import SmartImage from "./ui/SmartImage";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -23,7 +24,13 @@ const ServiceCard = ({ index, title, icon }) => {
             speed: 450,
           }}
         >
-          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+          <SmartImage
+            src={icon}
+            alt={title}
+            width={64}
+            height={64}
+            className="w-16 h-16 object-contain"
+          />
           <h3 className="text-white font-bold text-center text-[20px]">
             {title}
           </h3>
@@ -51,7 +58,9 @@ const About = () => {
 
     const cardsElement = cardsRef.current;
     if (cardsElement) {
-      cardsElement.addEventListener("mousemove", handleMouseMove);
+      cardsElement.addEventListener("mousemove", handleMouseMove, {
+        passive: true,
+      });
     }
 
     return () => {

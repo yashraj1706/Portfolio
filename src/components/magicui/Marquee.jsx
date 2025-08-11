@@ -1,5 +1,13 @@
 import { cn } from "../../lib/utils"; // We will fix this path later
-import React, { cloneElement, createContext, forwardRef, useContext, useMemo } from "react";
+import React, {
+  cloneElement,
+  createContext,
+  forwardRef,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import { motion } from "framer-motion";
 
 // Note: This is a simplified version of the Marquee component from Magic UI
@@ -18,36 +26,69 @@ const Marquee = forwardRef((props, ref) => {
     pauseOnHover = false,
     children,
     vertical = false,
-    repeat = 4,
+    repeat = 2,
     ...rest
   } = props;
-  
+
   const [isAnimationPaused, setIsAnimationPaused] = React.useState(false);
 
-  const marqueeRef = React.useRef(null);
+  // Use an internal ref to measure the container
+  const marqueeRef = useRef(null);
+
+  const getSize = () => {
+    const el = marqueeRef.current;
+    if (!el) return { container: 0, content: 0 };
+    const container = vertical ? el.offsetHeight : el.offsetWidth;
+    const firstChild = el.firstElementChild;
+    const content = firstChild
+      ? vertical
+        ? firstChild.scrollHeight
+        : firstChild.scrollWidth
+      : 0;
+    return { container, content };
+  };
 
   const duration = useMemo(() => {
-    if (marqueeRef.current) {
-      const containerWidth = marqueeRef.current.offsetWidth;
-      const contentWidth = marqueeRef.current.firstElementChild.offsetWidth;
-      return contentWidth < containerWidth ? containerWidth / 100 : contentWidth / 100;
+    const { container, content } = getSize();
+    if (container && content) {
+      // Longer content => longer duration; ensure a minimum
+      const ratio = Math.max(content / Math.max(container, 1), 1);
+      return Math.min(Math.max(ratio * 10, 12), 60); // clamp to [12s, 60s]
     }
     return 20; // Default duration
-  }, [children]);
+  }, [children, vertical]);
 
+  // Recompute CSS var on resize
+  useEffect(() => {
+    const handle = () => {
+      // Trigger a re-render by updating state via paused toggle noop
+      setIsAnimationPaused((p) => p);
+    };
+    window.addEventListener("resize", handle);
+    return () => window.removeEventListener("resize", handle);
+  }, []);
 
   return (
     <MarqueeContext.Provider value={{ isAnimationPaused }}>
       <div
-        ref={ref}
+        // Attach internal measuring ref; still forward external ref via callback
+        ref={(node) => {
+          marqueeRef.current = node;
+          if (typeof ref === "function") ref(node);
+          else if (ref && typeof ref === "object") ref.current = node;
+        }}
         style={{
           ...style,
           "--duration": `${duration}s`,
         }}
-        className={cn("group flex overflow-hidden [--gap:0rem] [--duration:20s]", {
-          "flex-row": !vertical,
-          "flex-col": vertical,
-        }, className)}
+        className={cn(
+          "group flex overflow-hidden [--gap:0rem] [--duration:20s]",
+          {
+            "flex-row": !vertical,
+            "flex-col": vertical,
+          },
+          className
+        )}
         onMouseEnter={() => pauseOnHover && setIsAnimationPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsAnimationPaused(false)}
         {...rest}

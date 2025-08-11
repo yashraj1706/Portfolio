@@ -65,9 +65,9 @@ const Experience = () => {
           Work Experience.
         </h2>
       </motion.div>
-      <div className=" bg-transparent sticky top-9 left-0 p-10 z-[100]">
+      <div className=" bg-transparent sticky md:top-[2.35rem] top-[2.25rem] left-0 p-10 z-[100]">
           <motion.div
-            className="progressBar opacity-90 h-[5px] exp-bg bg-gradient-to-r from-[#00ffe5] via-[#b798fe]  to-[#ff69e3] rounded-full"
+            className="progressBar  h-[5px] exp-bg bg-gradient-to-r from-[#00ffe5] via-[#b798fe]  to-[#ff69e3] rounded-full"
             style={{ scaleX }}
           />
       </div>
