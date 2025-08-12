@@ -14,8 +14,8 @@ export function CanvasRevealEffectDemo() {
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-emerald-600"
-            totalSize={8}      // Lower = fewer dots (default was 4)
-            dotSize={4}        // Higher = bigger dots
+            // totalSize={15}      // Lower = fewer dots (default was 4)
+            dotSize={2.5}        // Higher = bigger dots
           />
         </Card>
 
