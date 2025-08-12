@@ -87,7 +87,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full flex items-center justify-center border-t border-brand-deep/40 p-0 m-0 bg-black">
+    <footer className="w-full flex items-center justify-center border-t-[2.5px]  border-brand-deep/40 p-0 m-0 bg-black">
       <div className=" w-full flex flex-col md:flex-row justify-center md:items-end items-center md:gap- mb-10 gap-6">
         <p
           className="md:text-base

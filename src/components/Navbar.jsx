@@ -61,8 +61,8 @@ const Navbar = () => {
         // Old: solid primary on scroll, transparent otherwise
         // scrolled ? "bg-primary border-b-2 border-white" : "bg-transparent"
         scrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-brand-deep/40"
-          : "bg-transparent backdrop-blur-0 border-b border-transparent"
+          ? "bg-black/70 backdrop-blur-md border-b-[2.5px] border-brand-deep/40"
+          : "bg-transparent backdrop-blur-0 border-b-[2.5px] border-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -89,7 +89,7 @@ const Navbar = () => {
           </p> */}
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10 order-2">
+        <ul className="list-none hidden lg:flex flex-row gap-10 order-2">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -97,7 +97,7 @@ const Navbar = () => {
                 active === nav.title
                   ? "text-white border-b-2 border-brand"
                   : "text-secondary"
-              } hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[2000ms] ease-in-out text-[18px] font-medium cursor-pointer`}
+              } hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[1000ms] ease-in-out text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -128,7 +128,7 @@ const Navbar = () => {
           />
         </a> */}
 
-        <div className="xs:hidden flex  justify-end items-center order-2">
+        <div className="lg:hidden flex  justify-end items-center order-2">
           <img
             src={toggle ? close : menu}
             alt="menu"
