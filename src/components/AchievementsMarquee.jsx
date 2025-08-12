@@ -93,8 +93,9 @@ const AchievementsMarquee = () => {
           <ReviewCard key={review.username} {...review} classname="mr-2 ml-2" />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 mt-60  bg-gradient-to-r from-black dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 md:mt-60 mt-44 mb-9 bg-gradient-to-r from-black dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black
+      mt-44 mb-9  dark:from-background"></div>
     </>
   );
 };

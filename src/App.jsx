@@ -27,7 +27,6 @@ const AchievementsMarquee = lazy(() =>
 // );
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
-const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 
 const App = () => {
   return (
