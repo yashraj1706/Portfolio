@@ -12,8 +12,10 @@ export function CanvasRevealEffectDemo() {
           body="I design and implement GenAI and agentic AI workflows using LLMs, retrieval systems, and automation pipelines to solve real-world challenges. Certified in IBM/Coursera AI and Google GenAI Exchange."
         >
           <CanvasRevealEffect
-            animationSpeed={5.1}
+            animationSpeed={3}
             containerClassName="bg-emerald-600"
+            totalSize={8}      // Lower = fewer dots (default was 4)
+            dotSize={4}        // Higher = bigger dots
           />
         </Card>
 
