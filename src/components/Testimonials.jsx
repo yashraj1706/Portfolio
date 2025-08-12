@@ -127,7 +127,9 @@ const MagicButton = ({ title, icon, position, handleClick, otherClasses }) => {
       className="relative inline-flex h-14 w-full md:w-60 md:mt-10 overflow-hidden rounded-lg p-[1px] focus:outline-none"
       onClick={handleClick}
     >
-      <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+      {/* Old purple ring kept */}
+      {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" /> */}
+      <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ccf6c8_0%,#00a66d_50%,#ccf6c8_100%)]" />
       <span
         className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg
                    bg-slate-950 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
@@ -190,7 +192,7 @@ const TestimonialCard = ({
         )}
         {isLong && !showFull && (
           <button
-            className="text-violet-300 underline text-sm mt-1 hover:text-violet-400 transition-colors"
+            className="text-brand-strong underline text-sm mt-1 hover:text-brand transition-colors duration-[2000ms]"
             onClick={() => setShowFull(true)}
           >
             See more
@@ -198,7 +200,7 @@ const TestimonialCard = ({
         )}
         {isLong && showFull && (
           <button
-            className="text-violet-300 underline text-sm mt-1 hover:text-violet-400 transition-colors"
+            className="text-brand-strong underline text-sm mt-1 hover:text-brand transition-colors duration-[2000ms]"
             onClick={() => setShowFull(false)}
           >
             Show less
@@ -210,7 +212,7 @@ const TestimonialCard = ({
               <span className="blue-text-gradient">@</span> {name}
             </p>
             <p className="mt-1 text-secondary text-[12px]">
-              {designation} @ <b className="text-violet-300">{company}</b>
+              {designation} @ <b className="text-brand-strong">{company}</b>
             </p>
           </div>
           <img
@@ -221,7 +223,7 @@ const TestimonialCard = ({
           />
         </div>
       </div>
-      <a href={linkedInRecsUrl} target="_blank" rel="noopener noreferrer" >
+      <a href={linkedInRecsUrl} target="_blank" rel="noopener noreferrer">
         <MagicButton
           title="View on LinkedIn"
           icon={<img src={linkedInImg} alt="LinkedIn" />}
@@ -248,7 +250,11 @@ const Testimonials = () => {
         className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap justify-around gap-5`}
       >
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={testimonial.name} index={index} {...testimonial} />
+          <TestimonialCard
+            key={testimonial.name}
+            index={index}
+            {...testimonial}
+          />
         ))}
       </div>
     </div>

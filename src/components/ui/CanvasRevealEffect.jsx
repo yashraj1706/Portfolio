@@ -9,8 +9,39 @@ export const CanvasRevealEffect = ({
   colors = [[0, 255, 255]],
   containerClassName,
   dotSize,
-  showGradient = true
+  showGradient = true,
+  disableOnMobile = true,
+  fallbackClassName,
 }) => {
+  const isMobile = React.useMemo(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      const coarse =
+        window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+      const small = window.innerWidth < 640;
+      return coarse || small;
+    } catch {
+      return false;
+    }
+  }, []);
+
+  // Mobile fallback: no WebGL/canvas, just a smooth gradient background
+  if (disableOnMobile && isMobile) {
+    return (
+      <div className={cn("h-full relative w-full", containerClassName)}>
+        <div
+          className={cn(
+            "absolute inset-0 bg-gradient-to-br from-brand-deep/70 via-brand-strong/40 to-transparent",
+            fallbackClassName
+          )}
+        />
+        {showGradient && (
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 to-[84%]" />
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className={cn("h-full relative bg-white w-full", containerClassName)}>
       <div className="h-full w-full">
@@ -26,7 +57,8 @@ export const CanvasRevealEffect = ({
               opacity *= step(intro_offset, u_time * animation_speed_factor);
               opacity *= clamp((1.0 - step(intro_offset + 0.1, u_time * animation_speed_factor)) * 1.25, 1.0, 1.25);
             `}
-          center={["x", "y"]} />
+          center={["x", "y"]}
+        />
       </div>
       {showGradient && (
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950 to-[84%]" />
@@ -148,15 +180,12 @@ const DotMatrix = ({
       fragColor.rgb *= fragColor.a;
         }`}
       uniforms={uniforms}
-      maxFps={60} />
+      maxFps={60}
+    />
   );
 };
 
-const ShaderMaterial = ({
-  source,
-  uniforms,
-  maxFps = 60
-}) => {
+const ShaderMaterial = ({ source, uniforms, maxFps = 60 }) => {
   const { size } = useThree();
   const ref = useRef();
   let lastFrameTime = 0;
@@ -195,8 +224,7 @@ const ShaderMaterial = ({
           break;
         case "uniform3fv":
           preparedUniforms[uniformName] = {
-            value: uniform.value.map((v) =>
-              new THREE.Vector3().fromArray(v)),
+            value: uniform.value.map((v) => new THREE.Vector3().fromArray(v)),
             type: "3fv",
           };
           break;

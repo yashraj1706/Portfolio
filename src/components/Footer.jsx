@@ -43,7 +43,9 @@ const Footer = () => {
         className="relative inline-flex h-12 w-full md:w-60 md:mt-10 overflow-hidden rounded-lg p-[1px] focus:outline-none"
         onClick={handleClick}
       >
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        {/* Old purple ring */}
+        {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" /> */}
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ccf6c8_0%,#00a66d_50%,#ccf6c8_100%)]" />
         <span
           className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg
                    bg-slate-950 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
@@ -69,7 +71,9 @@ const Footer = () => {
         className="relative  cursor-pointer  inline-flex h-12 w-16 md:w-fit md:mt-10 overflow-clip rounded-lg p-[1px] hover:p-[2px] duration-300 focus:outline-none"
         onClick={handleClick}
       >
-        <span className="absolute text-center inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        {/* Old purple ring */}
+        {/* <span className="absolute text-center inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" /> */}
+        <span className="absolute text-center inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ccf6c8_0%,#00a66d_50%,#ccf6c8_100%)]" />
         <span
           className={`inline-flex  h-full w-full cursor-default items-center justify-center rounded-lg
                    bg-slate-950 px-0  text-sm font-medium text-white backdrop-blur-3xl  ${otherClasses}`}
@@ -83,7 +87,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full flex items-center justify-center border-t-2 border-white p-0 m-0">
+    <footer className="w-full flex items-center justify-center border-t border-brand-deep/40 p-0 m-0 bg-black">
       <div className=" w-full flex flex-col md:flex-row justify-center md:items-end items-center md:gap- mb-10 gap-6">
         <p
           className="md:text-base
@@ -124,7 +128,7 @@ const Footer = () => {
               icon={<IoCopyOutline />}
               position="left"
               handleClick={handleCopy}
-              otherClasses="!bg-[#161A31]"
+              otherClasses="!bg-[#0b1a1c] hover:!bg-brand-dark transition-colors duration-[2000ms]"
             />
           </div>
           <div className="w-fit mx-auto md:m-0 flex justify-center gap-3 m-0 p-0">
@@ -147,7 +151,7 @@ const Footer = () => {
                 title="View My Resume"
                 icon={<IoCopyOutline />}
                 positoion="left"
-                otherClasses="!bg-[#161A31]"
+                otherClasses="!bg-[#0b1a1c] hover:!bg-brand-dark transition-colors duration-[2000ms]"
               />
             </a>
           </div>

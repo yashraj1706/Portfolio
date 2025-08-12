@@ -9,10 +9,8 @@ html, body {
 }
 
 .highlight-word {
-  color: #915EFF;
-  /* color: #5eff96; */
-  /*A3FF79-------------------------------------------------------------------------------*/
-
+  /* color: #915EFF; */ /* old purple */
+  color: #00a66d; /* brand-strong */
 }
 
 .spline-watermark,
@@ -34,14 +32,16 @@ canvas ~ div:last-child {
 
 /* Highlight animation for technical terms */
 .highlight-word {
-  color: #915EFF;
+  /* color: #915EFF; */
+  color: #00beb5; /* brand */
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 2s ease, text-shadow 2s ease;
 }
 
 /* Animation for text typing */
 .typed-text span:has(strong) {
-  color: #915EFF;
+  /* color: #915EFF; */
+  color: #00a66d;
   font-weight: 600;
 }
 
@@ -75,25 +75,30 @@ canvas ~ div:last-child {
 }
 
 .violet-gradient {
+  /* Old purple gradient kept for reference
   background: #804dee;
   background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
+  background: -webkit-linear-gradient(-90deg, #804dee 0%, rgba(60,51,80,0) 100%);
+  */
+  background: #00beb5;
+  background: linear-gradient(-90deg, #00beb5 0%, rgba(0, 56, 60, 0) 100%);
+  background: -webkit-linear-gradient(-90deg, #00beb5 0%, rgba(0,56,60,0) 100%);
 }
 
 .green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  /* Old teal->pink gradient replaced for green theme */
+  background: "#00a66d";
+  background: linear-gradient(90deg, #ccf6c8 0%, #00a66d 55%, #1e6139 100%);
+  background: -webkit-linear-gradient(90deg, #ccf6c8 0%, #00a66d 55%, #1e6139 100%);
 }
 .timeline-line {
-  width: 5px; /* Adjust the width as needed */
-  height: 100%; /* Full height */
+  width: 5px;
+  height: 100%;
+  /* Old multi-color gradient commented out
   background: linear-gradient(to bottom, #ff7e5f, #feb47b, #6a11cb, #2575fc);
-  border-radius: 2.5px; /* Half of the width to make it rounded */
+  */
+  background: linear-gradient(to bottom, #00383c, #00a66d, #ccf6c8);
+  border-radius: 2.5px;
 }
 
 .card:hover::before{
@@ -174,6 +179,7 @@ canvas ~ div:last-child {
     #f5af19
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -190,6 +196,7 @@ canvas ~ div:last-child {
     #38ef7d
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -207,6 +214,7 @@ canvas ~ div:last-child {
     #56ccf2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -223,6 +231,7 @@ canvas ~ div:last-child {
     #fc6767
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

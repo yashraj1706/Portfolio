@@ -38,7 +38,9 @@ const Navbar = () => {
         className="relative inline-flex h-10 w-full  md:w-fit  overflow-hidden rounded-lg p-[1.5px] focus:outline-none"
         onClick={handleClick}
       >
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        {/* Old purple conic ring kept for reference */}
+        {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" /> */}
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ccf6c8_0%,#00a66d_50%,#ccf6c8_100%)]" />
         <span
           className={`inline-flex h-full text-[20px] w-fit cursor-pointer items-center justify-center rounded-lg
                    bg-slate-950 px-8 text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
@@ -56,7 +58,11 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary border-b-2 border-white bg-opacity-" : "bg-transparent"
+        // Old: solid primary on scroll, transparent otherwise
+        // scrolled ? "bg-primary border-b-2 border-white" : "bg-transparent"
+        scrolled
+          ? "bg-black/80 backdrop-blur-md border-b border-brand-deep/40"
+          : "bg-transparent backdrop-blur-0 border-b border-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -89,9 +95,9 @@ const Navbar = () => {
               key={nav.id}
               className={`${
                 active === nav.title
-                  ? "text-white border-b-2 border-white"
+                  ? "text-white border-b-2 border-brand"
                   : "text-secondary"
-              } hover:text-white transition-all duration-200 hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
+              } hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[2000ms] ease-in-out text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -133,7 +139,7 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl border border-brand-deep/40 backdrop-blur-md bg-black/80`}
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col gap-6">
               {navLinks.map((nav) => (

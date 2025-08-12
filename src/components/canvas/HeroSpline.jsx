@@ -1,28 +1,30 @@
-import Spline from '@splinetool/react-spline';
-import  {LoaderFour}  from '../ui/LoaderFour';
+import Spline from "@splinetool/react-spline";
+import { LoaderFour } from "../ui/LoaderFour";
 import { useState } from "react";
 
 export default function HeroSpline() {
   const [isLoading, setIsLoading] = useState(true);
+  const sceneUrl = import.meta.env.VITE_SPLINE_HERO_SCENE;
 
   return (
     // <div className="relative w-full h-full overflow-hidden">
     <div className="relative w-full h-full overflow-hidden will-change-transform contain-content">
-
-        {isLoading && (
-            <div className="w-full h-full flex justify-center items-center" >
-              <LoaderFour />
-            </div>
-          
-        )}
+      {isLoading && (
+        <div className="w-full h-full flex justify-center items-center">
+          <LoaderFour />
+        </div>
+      )}
+      {sceneUrl ? (
         <Spline
-            // scene="https://prod.spline.design/0J1ODbEjN6Yd4y9J/scene.splinecode" //computer and lamp
-            // scene="https://prod.spline.design/6kf2VXWxoG7DAWoO/scene.splinecode" //hero section with bubble
-            // scene="https://prod.spline.design/qGo1XcmAaVeLAiEs/scene.splinecode" //clarity line
-            scene="https://prod.spline.design/foQZfbMfy50mFPVY/scene.splinecode"
-            className="!w-[110%] !h-[110%] absolute top-0 left-0"
-            onLoad={() => setIsLoading(false)}
+          scene={sceneUrl}
+          className="!w-[110%] !h-[110%] absolute top-0 left-0"
+          onLoad={() => setIsLoading(false)}
         />
-    </div>   
+      ) : (
+        <div className="w-full h-full flex items-center justify-center text-secondary">
+          Missing VITE_SPLINE_HERO_SCENE
+        </div>
+      )}
+    </div>
   );
 }

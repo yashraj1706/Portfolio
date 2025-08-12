@@ -5,15 +5,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
+        // Old theme (commented out for green overhaul):
+        // primary: "#050816",
+        // secondary: "#aaa6c3",
+        // tertiary: "#151030",
+        // "black-100": "#100d25",
+        // "black-200": "#090325",
+        // "white-100": "#f3f3f3",
+
+        // New base for green theme:
+        primary: "#000000", // site background (was #050816)
+        secondary: "#94a3b8", // neutral text on dark (slate-400)
+        tertiary: "#0b1a1c", // subtle deep green-tinted surface
+        "black-100": "#0a0a0a",
+        "black-200": "#050505",
         "white-100": "#f3f3f3",
+
+        // Brand tokens (greens/teal)
+        brand: "#00beb5", // Primary (A)
+        "brand-strong": "#00a66d",
+        "brand-foreground": "#ccf6c8",
+        "brand-dark": "#1e6139",
+        "brand-deep": "#00383c",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        // card: "0px 35px 120px -15px #211e35", // old purple shadow
+        card: "0 35px 120px -15px rgba(0, 190, 181, 0.12)",
       },
       screens: {
         xs: "450px",
@@ -23,7 +40,7 @@ module.exports = {
       },
       animation: {
         "marquee-horizontal":
-        "marquee-horizontal var(--duration) linear infinite",
+          "marquee-horizontal var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "loader-4": "loader-4 1.2s linear infinite",
         shimmer: "shimmer 2s linear infinite",
@@ -45,7 +62,7 @@ module.exports = {
           "100%": {
             transform: "rotate(360deg)",
           },
-          "shimmer": {
+          shimmer: {
             from: {
               backgroundPosition: "0 0",
             },
@@ -53,7 +70,7 @@ module.exports = {
               backgroundPosition: "-200% 0",
             },
           },
-          "orbit": {
+          orbit: {
             "0%": {
               transform:
                 "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
