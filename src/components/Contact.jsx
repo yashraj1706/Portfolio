@@ -6,7 +6,7 @@ import { toast, Toaster } from 'react-hot-toast';
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
 import { slideIn,textVariant,fadeIn } from '../utils/motion';
-import ContactMeRobo from './canvas/ContactMeRobo';
+// import ContactMeRobo from './canvas/ContactMeRobo';
 
 
 
@@ -160,12 +160,12 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
         className='xl:flex-1  self-center xl:h-[650px] md:h-[550px] md:w-auto w-full h-[350px]'
       >
         <ContactMeRobo />
-      </motion.div>
+      </motion.div> */}
       {/* <div className="absolute md:hidden xs:bottom-10 top-72 w-full flex justify-center items-center">
         <a href="#contactform">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
