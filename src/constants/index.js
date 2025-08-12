@@ -63,8 +63,16 @@ import {
       title: "Work",
     },
     {
+      id:"achievements",
+      title:"Achievements",
+    },
+    {
       id: "testimonials",
       title: "Testimonials",
+    },
+    {
+      id:"techStack",
+      title:"Tech-Stack",
     },
     {
       id: "contact",

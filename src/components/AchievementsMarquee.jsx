@@ -83,12 +83,12 @@ const AchievementsMarquee = () => {
         <h2 className={`${styles.sectionHeadText}`}>Achievements.</h2>
       </motion.div>
 
-      <Marquee pauseOnHover className="[--duration:20s]">
+      <Marquee pauseOnHover className="[--duration:90s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} classname="mr-2 ml-2" />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="mt-4 [--duration:20s]">
+      <Marquee reverse pauseOnHover className="mt-4 [--duration:90s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} classname="mr-2 ml-2" />
         ))}

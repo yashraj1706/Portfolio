@@ -37,6 +37,7 @@ const badge = {
 };
 
 const TechStack = () => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
   return (
     <div className="flex min-h-fit mt-10 flex-row flex-wrap justify-center gap-0">
       <motion.div className="w-full" variants={textVariant()}>
@@ -46,7 +47,9 @@ const TechStack = () => {
 
       <div className="relative overflow-hidden h-[560px] w-full">
         {/* Outer ring: core stack */}
-        <OrbitingCircles radius={230} iconSize={56} speed={0.9} startAngle={0}>
+        <OrbitingCircles 
+          radius={isMobile ? 150 : 230}
+          iconSize={56} speed={0.9} startAngle={0}>
           <IconReact size={56} {...badge} />
           <IconNext size={56} color="ffffff" {...badge} />
           <IconNode size={56} {...badge} />
@@ -59,7 +62,7 @@ const TechStack = () => {
 
         {/* Middle ring: UI + tooling */}
         <OrbitingCircles
-          radius={160}
+          radius={isMobile ? 90 : 160}
           reverse
           iconSize={40}
           speed={1.0}
@@ -76,7 +79,7 @@ const TechStack = () => {
 
         {/* Inner ring: platforms/providers (uniform size) */}
         <OrbitingCircles
-          radius={105}
+          radius={isMobile ? 45 : 105}
           iconSize={44}
           speed={1.2}
           startAngle={0}
@@ -94,4 +97,4 @@ const TechStack = () => {
   );
 };
 
-export default SectionWrapper(TechStack, "");
+export default SectionWrapper(TechStack, "techStack");

@@ -80,6 +80,10 @@ const App = () => {
                   <InViewMount>
                     <AchievementsMarquee />
                   </InViewMount>
+
+                   <InViewMount>
+                    <Testimonials />
+                  </InViewMount>
                   
                   <InViewMount>
                     <TechStack />
@@ -89,9 +93,6 @@ const App = () => {
                     <Projects />
                   </InViewMount> */}
                   
-                  <InViewMount>
-                    <Testimonials />
-                  </InViewMount>
                   
                   <div className="relative z-0">
                     <InViewMount>
