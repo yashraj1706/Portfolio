@@ -7,7 +7,6 @@ import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import "../index.css";
-import { CanvasRevealEffectDemo } from "./CanvasRevealEffectDemo";
 // import SmartImage from "./ui/SmartImage";
 
 // const ServiceCard = ({ index, title, icon }) => {
@@ -72,7 +71,7 @@ const About = () => {
   // }, []);
   return (
     <>
-      <motion.div className="mt-10" variants={textVariant()}>
+      <motion.div className="mt-10 z-[1000]" variants={textVariant()}>
         <p className={`${styles.sectionSubText}`}>Introduction</p>
         <h2 className={`${styles.sectionHeadText}`}>Overview.</h2>
       </motion.div>
@@ -80,19 +79,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Hi, I’m Yash Raj Singh, a full-stack and GenAI developer from Kashipur,
-        India, currently in my final year of B.Tech CSE at KIIT (Class of 2026).
+        Hi, I’m Yash Raj Singh, a <strong>Full-stack and GenAI developer</strong> from Uttarakhand,
+        India, currently in my <strong>final year of B.Tech CSE at KIIT</strong> (Class of 2026).
         I specialize in building scalable, production-ready apps, AI-powered
         systems, and intuitive digital experiences across web, mobile, and
         cloud.
         <br />
         <br />
-        I’ve led GenAI projects at Accenture, where I built an asset monitoring
-        platform that syncs with SCADA and IoT systems, integrates real-time
-        data with OpenAI-powered chatbots, and cuts asset diagnosis time from
-        hours to minutes. My work combines LangChain, Python logic engines, SQL
-        routing, and LLM-driven recommendations to solve real-world problems at
-        scale.
+        I’ve led an <strong>Agentic AI</strong> project at <i className="text-purple-300 font-semibold">Accenture</i>, where I developed an asset management platform powered by a <strong>diagnostic AI agent</strong> that integrates with SCADA and IoT systems, syncs real-time data with OpenAI-powered workflows, and reduces asset diagnosis time from hours to minutes. My work combined LangChain, Python logic engines, SQL routing, and LLM-driven recommendations to deliver scalable, real-world solutions.
         <br />
         <br />
         Beyond AI, I bring deep expertise in full-stack development using React,
@@ -101,10 +95,9 @@ const About = () => {
         robust APIs.
         <br />
         <br />
-        I’ve also explored RAG pipelines, prompt engineering, FAISS, and Agentic
-        AI workflows through hands-on projects and programs like the Google
-        GenAI Exchange. I’m a Top 100 finalist in Deloitte Hacksplosion (12K+
-        participants), a Smart India Hackathon finalist, and an open-source
+        I’m also part of the Google GenAI Exchange Program and Coursera-certified in <strong>Agentic AI workflows, Generative AI(RAG pipelines, LangChain, Prompt Engineering, LLMs, Transformers, NLP, Vector Stores.), Machine Learning, Deep Learning</strong>; skills I honed through hands-on projects and specialized training programs.
+        <br/>I’m a Top 100 finalist in Deloitte Hacksplosion (12K+
+        participants), a Smart India Hackathon regional finalist, and an open-source
         contributor and mentor to 100+ juniors in DSA and web dev.
         <br />
         <br />
@@ -116,7 +109,6 @@ const About = () => {
           return <ServiceCard key={service.title} index={index} {...service} />;
         })}
       </div> */}
-      <CanvasRevealEffectDemo />
     </>
   );
 };

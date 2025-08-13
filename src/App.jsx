@@ -2,16 +2,13 @@ import React, { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Navbar, Hero } from "./components";
 import { InViewMount } from "./utils/InViewMount";
+import { Analytics } from '@vercel/analytics/react';
 const About = lazy(() => import("./components/About"));
 const Experience = lazy(() => import("./components/Experience"));
 const TechStack = lazy(() => import("./components/TechStack"));
 const Projects = lazy(() => import("./components/Projects"));
 const Testimonials = lazy(() => import("./components/Testimonials"));
-const OrbitingCirclesDemo = lazy(() =>
-  import("./components/OrbitingCirclesDemo").then((m) => ({
-    default: m.OrbitingCirclesDemo,
-  }))
-);
+
 const CertificationsPreview = lazy(() =>
   import("./components/CertificationsPreview")
 );
@@ -20,11 +17,11 @@ const Resume = lazy(() => import("./components/Resume"));
 const AchievementsMarquee = lazy(() =>
   import("./components/AchievementsMarquee")
 );
-// const CanvasRevealEffectDemo = lazy(() =>
-//   import("./components/CanvasRevealEffectDemo").then((m) => ({
-//     default: m.CanvasRevealEffectDemo,
-//   }))
-// );
+const CanvasRevealEffectDemo = lazy(() =>
+  import("./components/CanvasRevealEffectDemo").then((m) => ({
+    default: m.CanvasRevealEffectDemo,
+  }))
+);
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
 
@@ -71,7 +68,11 @@ const App = () => {
                   <InViewMount>
                     <About />
                   </InViewMount>
-                  
+
+                  <InViewMount>
+                    <CanvasRevealEffectDemo />
+                  </InViewMount>
+
                   <InViewMount>
                     <Experience />
                   </InViewMount>
@@ -109,6 +110,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Analytics />
     </div>
   );
 };

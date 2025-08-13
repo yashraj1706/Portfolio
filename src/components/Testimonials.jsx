@@ -171,7 +171,7 @@ const TestimonialCard = ({
   return (
     <motion.div
       variants={fadeIn("", "spring", index * 0.5, 0.75)}
-      className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full "
+      className="bg-black-100 p-10 rounded-3xl xs:w-[320px] w-full "
     >
       <p className="text-white font-black text-[48px]">"</p>
       <div className="mt-1 mb-2">
@@ -237,7 +237,12 @@ const TestimonialCard = ({
 
 const Testimonials = () => {
   return (
-    <div className={`mt-0 sm:mt-12  bg-black-100 rounded-[20px] block`}>
+              // brand: "#00beb5", // Primary (A)
+              // "brand-strong": "#00a66d",
+              // "brand-foreground": "#ccf6c8",
+              // "brand-dark": "#1e6139",
+              // "brand-deep": "#00383c",
+    <div className={`mt-0 sm:mt-12 bg-brand-deep rounded-[20px] block`}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >

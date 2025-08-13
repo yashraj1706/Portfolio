@@ -33,7 +33,7 @@ export function CanvasRevealEffectDemo() {
             dotSize={2}
           />
           {/* Radial gradient for a softer reveal fade */}
-          <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+          <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
         </Card>
 
         <Card
@@ -57,13 +57,13 @@ const Card = ({ title, body, children }) => {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group/canvas-card border border-black/20 dark:border-white/20 max-w-full w-full mx-auto p-4 relative h-[26rem]"
+      className="group/canvas-card border border-white/20 max-w-full w-full mx-auto p-4 relative h-[26rem]"
     >
       {/* Decorative corners */}
-      <Icon className="absolute h-5 w-5 -top-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-5 w-5 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-5 w-5 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-5 w-5 -bottom-3 -right-3 dark:text-white text-black" />
+      <Icon className="absolute h-5 w-5 -top-3 -left-3 text-white" />
+      <Icon className="absolute h-5 w-5 -bottom-3 -left-3 text-white" />
+      <Icon className="absolute h-5 w-5 -top-3 -right-3 text-white" />
+      <Icon className="absolute h-5 w-5 -bottom-3 -right-3 text-white" />
 
       {/* Hover reveal layer: animated canvas + text */}
       <AnimatePresence>
@@ -92,7 +92,7 @@ const Card = ({ title, body, children }) => {
       <div className="relative z-20 flex items-center justify-center h-full">
         <h2
           className={
-            "dark:text-white text-black text-xl md:text-2xl font-bold text-center transition-all duration-200 " +
+            "text-white text-xl md:text-2xl font-bold text-center transition-all duration-200 " +
             (hovered ? "opacity-0 -translate-y-2" : "opacity-100")
           }
         >
