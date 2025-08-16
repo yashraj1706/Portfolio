@@ -40,17 +40,17 @@ export default function LinkItem({
           )}
         </div>
       </div>
-      <div className="relative z-10 flex items-center gap-2 shrink-0">
+  <div className="relative z-10 flex items-center gap-1 sm:gap-2 shrink-0">
         {showToggle && (
           <button
             type="button"
             onClick={onToggle}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-brand-deep/50 bg-black/30 text-brand-strong hover:border-brand-strong/70 hover:bg-black/50 transition-colors duration-500"
+    className="inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-brand-deep/50 bg-black/30 text-brand-strong hover:border-brand-strong/70 hover:bg-black/50 transition-colors duration-500"
             aria-label={expanded ? `Collapse ${title}` : `Expand ${title}`}
           >
             <svg
               viewBox="0 0 24 24"
-              className={`h-4 w-4 transition-transform duration-500 ${
+      className={`h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-500 ${
                 expanded ? "rotate-180" : "rotate-0"
               }`}
               aria-hidden="true"
@@ -71,14 +71,24 @@ export default function LinkItem({
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative inline-flex h-9 w-[92px] overflow-hidden rounded-lg p-[1px] focus:outline-none"
+            className="relative inline-flex h-8 sm:h-9 min-w-0 overflow-hidden rounded-lg p-[1px] focus:outline-none"
             aria-label={`Open ${title}`}
           >
             {/* Old purple ring */}
             {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" /> */}
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ccf6c8_0%,#00a66d_50%,#ccf6c8_100%)]" />
-            <span className="inline-flex h-full w-full items-center justify-center rounded-lg bg-slate-950 px-4 text-sm font-medium text-white backdrop-blur-3xl transition-colors duration-[1000ms] group-hover:text-brand">
-              Open
+            <span className="inline-flex h-full w-full items-center justify-center gap-1 rounded-lg bg-slate-950 px-2 sm:px-3 text-xs sm:text-sm font-medium text-white backdrop-blur-3xl transition-colors duration-[1000ms] group-hover:text-brand">
+              {/* External link icon (visible on all sizes; label appears on sm+) */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+                aria-hidden="true"
+              >
+                <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z" />
+              </svg>
+              <span className="hidden sm:inline">Open</span>
             </span>
           </a>
         )}
