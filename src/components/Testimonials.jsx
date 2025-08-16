@@ -192,7 +192,7 @@ const TestimonialCard = ({
         )}
         {isLong && !showFull && (
           <button
-            className="text-brand-strong underline text-sm mt-1 hover:text-brand transition-colors duration-[2000ms]"
+            className="text-brand-strong underline text-sm mt-1 hover:text-brand transition-colors duration-[1000ms]"
             onClick={() => setShowFull(true)}
           >
             See more
@@ -200,7 +200,7 @@ const TestimonialCard = ({
         )}
         {isLong && showFull && (
           <button
-            className="text-brand-strong underline text-sm mt-1 hover:text-brand transition-colors duration-[2000ms]"
+            className="text-brand-strong underline text-sm mt-1 hover:text-brand transition-colors duration-[1000ms]"
             onClick={() => setShowFull(false)}
           >
             Show less
@@ -237,11 +237,11 @@ const TestimonialCard = ({
 
 const Testimonials = () => {
   return (
-              // brand: "#00beb5", // Primary (A)
-              // "brand-strong": "#00a66d",
-              // "brand-foreground": "#ccf6c8",
-              // "brand-dark": "#1e6139",
-              // "brand-deep": "#00383c",
+    // brand: "#00beb5", // Primary (A)
+    // "brand-strong": "#00a66d",
+    // "brand-foreground": "#ccf6c8",
+    // "brand-dark": "#1e6139",
+    // "brand-deep": "#00383c",
     <div className={`mt-0 sm:mt-12 bg-brand-deep rounded-[20px] block`}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}

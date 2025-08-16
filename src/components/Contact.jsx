@@ -152,7 +152,7 @@ const Contact = () => {
             {errors.message && <span className='text-red-500'>{errors.message}</span>}
           </label>
           <button
-            className='bg-tertiary py-3 px-8 border-[1.5px] w-fit text-white font-bold shadow-md shadow-primary rounded-xl'
+            className='bg-tertiary py-3 px-8 border-[1.5px] w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-brand-deep/100 duration-[500ms]'
             type='submit'
           >
             {loading ? 'Sending...' : 'Send'}

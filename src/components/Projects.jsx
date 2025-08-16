@@ -18,6 +18,7 @@ import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import SmartImage from "./ui/SmartImage";
 
 import "../index.css";
+import { ThreeDCardDemo } from "./ThreeDCardDemo";
 const ProjectCard = ({
   index,
   name,
@@ -116,11 +117,13 @@ const Projects = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 max-h-fit flex flex-wrap justify-evenly gap-7">
+      {/* <div className="mt-20 max-h-fit flex flex-wrap justify-evenly gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
-      </div>
+      </div> */}
+
+      <ThreeDCardDemo/>
     </>
   );
 };

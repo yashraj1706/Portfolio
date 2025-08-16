@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
+import { LINK_CATEGORIES } from "../constants/links";
 import { logo, logoColor, menu, close } from "../assets";
 import SmartImage from "./ui/SmartImage";
 
@@ -25,6 +26,23 @@ const Navbar = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // On /links routes, set active to 'Links' for visual feedback (non-destructive)
+  const location = useLocation();
+  const isLinks = location.pathname.startsWith("/links");
+
+  // Sync active tab with route on /links and /links/:category
+  useEffect(() => {
+    if (!isLinks) return;
+    const parts = location.pathname.split("/");
+    const key = parts[2];
+    if (!key) {
+      setActive("Links");
+    } else {
+      const found = LINK_CATEGORIES.find((c) => c.key === key);
+      setActive(found?.title ?? "Links");
+    }
+  }, [isLinks, location.pathname]);
 
   const MagicButton = ({
     title,
@@ -58,9 +76,8 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        // Old: solid primary on scroll, transparent otherwise
-        // scrolled ? "bg-primary border-b-2 border-white" : "bg-transparent"
-        scrolled
+        // On /links pages, stay translucent even at top
+        scrolled || isLinks
           ? "bg-black/70 backdrop-blur-md border-b-[2.5px] border-brand-deep/40"
           : "bg-transparent backdrop-blur-0 border-b-[2.5px] border-transparent"
       }`}
@@ -90,28 +107,58 @@ const Navbar = () => {
         </Link>
 
         <ul className="list-none hidden lg:flex flex-row gap-10 order-2">
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.title
-                  ? "text-white border-b-2 border-brand"
-                  : "text-secondary"
-              } hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[1000ms] ease-in-out text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-          {/* <li
-            key="Certificates"
-            className={`${
-              active === "Certificates" ? "text-white border-b-2 border-white"
-                  : "text-secondary"
-              } hover:text-white transition-all duration-200 hover:border-white hover:border-b-2 text-[18px] font-medium cursor-pointer`}
-          >
-            <Link to="/certifications">Certificates</Link>
-          </li> */}
+          {isLinks ? (
+            <>
+              {LINK_CATEGORIES.map((cat) => (
+                <li
+                  key={`links-${cat.key}`}
+                  className={`${
+                    active === cat.title
+                      ? "text-white border-b-2 border-brand"
+                      : "text-secondary"
+                  } hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[1000ms] ease-in-out text-[18px] font-medium cursor-pointer`}
+                  onClick={() => setActive(cat.title)}
+                >
+                  <Link to={`/links/${cat.key}`}>{cat.title}</Link>
+                </li>
+              ))}
+              <li
+                key="links-back"
+                className={`${"text-secondary hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[1000ms] ease-in-out text-[18px] font-medium cursor-pointer"}`}
+              >
+                <Link to="/">← Back</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  className={`${
+                    active === nav.title
+                      ? "text-white border-b-2 border-brand"
+                      : "text-secondary"
+                  } hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[1000ms] ease-in-out text-[18px] font-medium cursor-pointer`}
+                  onClick={() => setActive(nav.title)}
+                >
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
+              ))}
+              {location.pathname !== "/" && (
+                <li
+                  key="links"
+                  className={`${
+                    active === "Links"
+                      ? "text-white border-b-2 border-brand"
+                      : "text-secondary"
+                  } hover:text-brand hover:border-brand hover:border-b-2 transition-colors duration-[1000ms] ease-in-out text-[18px] font-medium cursor-pointer`}
+                  onClick={() => setActive("Links")}
+                >
+                  <Link to="/links/all">Links</Link>
+                </li>
+              )}
+            </>
+          )}
         </ul>
 
         {/* <a
@@ -128,7 +175,7 @@ const Navbar = () => {
           />
         </a> */}
 
-        <div className="lg:hidden flex  justify-end items-center order-2">
+        <div className="lg:hidden flex justify-end items-center order-2">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -139,36 +186,65 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl border border-brand-deep/40 backdrop-blur-md bg-black/80`}
+            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-[1000] rounded-xl border border-brand-deep/40 backdrop-blur-md bg-black/80 `}
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col gap-6">
-              {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-              {/* <a
-                href="/resume"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="order-2 md:mr-0"
-              >
-                <MagicButton
-                  title="Resume"
-                  icon=""
-                  positoion="left"
-                  otherClasses="!bg-[#161A31] "
-                />
-              </a> */}
+              {isLinks ? (
+                <>
+                  {LINK_CATEGORIES.map((cat) => (
+                    <li
+                      key={`links-m-${cat.key}`}
+                      className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                        active === cat.title ? "text-white" : "text-secondary"
+                      }`}
+                      onClick={() => {
+                        setToggle(false);
+                        setActive(cat.title);
+                      }}
+                    >
+                      <Link to={`/links/${cat.key}`}>{cat.title}</Link>
+                    </li>
+                  ))}
+                  <li
+                    key="links-mob-back"
+                    className={`font-poppins font-medium cursor-pointer text-[16px] text-secondary`}
+                    onClick={() => setToggle(false)}
+                  >
+                    <Link to="/">← Back</Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  {navLinks.map((nav) => (
+                    <li
+                      key={nav.id}
+                      className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                        active === nav.title ? "text-white" : "text-secondary"
+                      }`}
+                      onClick={() => {
+                        setToggle(!toggle);
+                        setActive(nav.title);
+                      }}
+                    >
+                      <a href={`#${nav.id}`}>{nav.title}</a>
+                    </li>
+                  ))}
+                  {location.pathname !== "/" && (
+                    <li
+                      key="links-mob"
+                      className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                        active === "Links" ? "text-white" : "text-secondary"
+                      }`}
+                      onClick={() => {
+                        setToggle(false);
+                        setActive("Links");
+                      }}
+                    >
+                      <Link to="/links/all">Links</Link>
+                    </li>
+                  )}
+                </>
+              )}
             </ul>
           </div>
         </div>
