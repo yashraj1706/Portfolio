@@ -26,20 +26,20 @@ export const linksData = [
     url: "https://leetcode.com/u/yashsng/",
     icon: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkGBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Kzc3Nzc3Nzc3Nzc3NzgtNzc3MTc4Ky83Nzc3ODc3ODc3NTgsNzM3Mi83Nzc3Nzg3LP/AABEIABwAHAMBEQACEQEDEQH/xAAaAAACAwEBAAAAAAAAAAAAAAAEBgEFBwMC/8QAKhAAAQMDAwIFBQEAAAAAAAAAAgEDBAAFEQYSMRNRITJBYZElQnGx8Af/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAwQC/8QAIxEAAgIBAwMFAAAAAAAAAAAAAAIBAxESMWEEI3ETISJR0f/aAAwDAQACEQMRAD8AzHcPZPigLTTdimajuY223tjlE3vPH4AyHqRL6J+6AAlg0xKejtPNSAbcIRea8jiIuNyey80By3D2SgPNpivXW6w7RHIRelvgyBFwKkuMr+KA0SRc5ltekaG/z6IjjUA1S5ynkHfMdRdq5yqYFFRUwnbwwnMrqVuSUbafo7rsmttS7ivq20TY5FeVs5W+MSCjo9YCFHF52oi8L4Vx01dldeixtWNp455OrnR21LGP0WerWgkCRpj0WS1MjOk2+yaONmPIki5RfmgHq7XnTWr2o96uMs7JfUXbP6DJE3LFE8444Jf7OKz9RZakR6Sap84K1IjT82xAqahuMKXP+lMGxDbBABDNVJzH3ln1WnTJalfdbLT7+OBcyM3bjEFZ1fetBIHoCKAmgIoD/9k=",
   },
-  {
-    category: "coding",
-    title: "HackerRank",
-    subtitle: "@yashsng7",
-    url: "https://www.hackerrank.com/profile/yashsng7",
-    icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAYFBMVEUNFB4MFB4NFB0NEx4ADRkAAAAAAAwNABgMEx47PkLV1dY2OT2Gh4m8vLwEw1QFvlIABxVLTVH///9GSEupqqvq6uoA9GcB7WQA8WYNABZBQ0cB6WMC6WNgYWQuMTexsbLvMrB+AAAAyElEQVR4AZ2QiwrCMAxFb5tF43zP13RT//8v3SVgAxQmnjEu5DRbE8yRPLKHIEYmqDMrafPfsk6O1GSj2mChiqXDusFls2rbtW7are72ZLeU0nk4dt1Jz91FrzfS3wWQIB+U2g/jMI43Sgvy+XpTjoQSyaVQktIJiZ0kdKIQPjsQv5CBxAsFKSD1UeCysoQifX0W1icoElksTY+Z8GeE4TJz5DTB06x6gNBSmYGIiQfcURIe5+sRJUHgKyURC9Ug4bdN4tUfRvkApzgQVpG08DsAAAAASUVORK5CYII=",
-  },
-  {
-    category: "coding",
-    title: "GFG",
-    subtitle: "@yashs7zje",
-    url: "https://www.geeksforgeeks.org/user/yashs7zje/",
-    icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAALVBMVEVHcEwujUUvjUYwi0QujUUvjUYvjUYujUUvjUUujUUvjUUvjUYujEUujUUvjUZimRHUAAAADnRSTlMADNYeufPka400e6VKXaau79UAAACrSURBVCiR3ZBZDgMhDEOHLITV9z9uQ6DqIs0BWn8gPQxxkuv6N6WU7mA0EbG6oS5o9fjcEaK5oGzItl0WlWaFoO76Q4dGWs7XOnidHZoGtAXMt9h4QzBC/7p9qkCg9jGE4EYWZqYtheINltnROeSZ3vKBQViTGfKI+kXBDjPSGnR1zQQqo5ooSoQ4zO4QbY/sSdnjFnrtDZ3P/prbkF0v+ayv7Z2Jrjv4GT0AJwcIG55/Qx4AAAAASUVORK5CYII=",
-  },
+  // {
+  //   category: "coding",
+  //   title: "HackerRank",
+  //   subtitle: "@yashsng7",
+  //   url: "https://www.hackerrank.com/profile/yashsng7",
+  //   icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAYFBMVEUNFB4MFB4NFB0NEx4ADRkAAAAAAAwNABgMEx47PkLV1dY2OT2Gh4m8vLwEw1QFvlIABxVLTVH///9GSEupqqvq6uoA9GcB7WQA8WYNABZBQ0cB6WMC6WNgYWQuMTexsbLvMrB+AAAAyElEQVR4AZ2QiwrCMAxFb5tF43zP13RT//8v3SVgAxQmnjEu5DRbE8yRPLKHIEYmqDMrafPfsk6O1GSj2mChiqXDusFls2rbtW7are72ZLeU0nk4dt1Jz91FrzfS3wWQIB+U2g/jMI43Sgvy+XpTjoQSyaVQktIJiZ0kdKIQPjsQv5CBxAsFKSD1UeCysoQifX0W1icoElksTY+Z8GeE4TJz5DTB06x6gNBSmYGIiQfcURIe5+sRJUHgKyURC9Ug4bdN4tUfRvkApzgQVpG08DsAAAAASUVORK5CYII=",
+  // },
+  // {
+  //   category: "coding",
+  //   title: "GFG",
+  //   subtitle: "@yashs7zje",
+  //   url: "https://www.geeksforgeeks.org/user/yashs7zje/",
+  //   icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAALVBMVEVHcEwujUUvjUYwi0QujUUvjUYvjUYujUUvjUUujUUvjUUvjUYujEUujUUvjUZimRHUAAAADnRSTlMADNYeufPka400e6VKXaau79UAAACrSURBVCiR3ZBZDgMhDEOHLITV9z9uQ6DqIs0BWn8gPQxxkuv6N6WU7mA0EbG6oS5o9fjcEaK5oGzItl0WlWaFoO76Q4dGWs7XOnidHZoGtAXMt9h4QzBC/7p9qkCg9jGE4EYWZqYtheINltnROeSZ3vKBQViTGfKI+kXBDjPSGnR1zQQqo5ooSoQ4zO4QbY/sSdnjFnrtDZ3P/prbkF0v+ayv7Z2Jrjv4GT0AJwcIG55/Qx4AAAAASUVORK5CYII=",
+  // },
 
   // Socials
   {
