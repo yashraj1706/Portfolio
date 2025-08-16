@@ -18,7 +18,7 @@ export default function LinkItem({
         className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent"
       />
       {/* Sub-link marker removed in favor of file-tree connectors */}
-      <div className="relative z-10 flex items-center gap-3 min-w-0">
+      <div className="relative z-10 flex items-center gap-3 min-w-0 flex-1">
         {icon ? (
           <img
             src={icon}
@@ -30,15 +30,17 @@ export default function LinkItem({
           <div className="h-6 w-6 shrink-0 rounded bg-brand-deep/50 ring-1 ring-brand-deep/60" />
         )}
         <div className="min-w-0">
-          <p className="truncate font-semibold exp-bg bg-gradient-to-br from-[#ccf6c8] via-[#00a66d] to-[#1e6139] text-transparent bg-clip-text group-hover:opacity-90 transition-opacity duration-[800ms]">
+          <p className="font-semibold exp-bg bg-gradient-to-br from-[#ccf6c8] via-[#00a66d] to-[#1e6139] text-transparent bg-clip-text group-hover:opacity-90 transition-opacity duration-[800ms] text-sm sm:text-base whitespace-normal break-words md:truncate">
             {title}
           </p>
           {subtitle && (
-            <p className="truncate text-secondary text-sm">{subtitle}</p>
+            <p className="text-secondary text-xs sm:text-sm whitespace-normal break-words md:truncate">
+              {subtitle}
+            </p>
           )}
         </div>
       </div>
-      <div className="relative z-10 flex items-center gap-2">
+      <div className="relative z-10 flex items-center gap-2 shrink-0">
         {showToggle && (
           <button
             type="button"
@@ -80,7 +82,6 @@ export default function LinkItem({
             </span>
           </a>
         )}
-        
       </div>
     </li>
   );
