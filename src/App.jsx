@@ -110,9 +110,9 @@ const App = () => {
                     <TechStack />
                   </InViewMount>
 
-                  <InViewMount>
+                  {/* <InViewMount>
                     <Projects />
-                  </InViewMount>
+                  </InViewMount> */}
 
                   <div className="relative z-0">
                     <InViewMount>

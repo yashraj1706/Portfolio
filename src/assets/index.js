@@ -65,7 +65,15 @@ import tailwindsvg from './projectSvgs/tailwindsvg.svg'
 import appwritesvg from './projectSvgs/appwritesvg.svg'
 
 
+import genaiResume from './genai-resume.jpg';
+import algoVisualizer from './algoVisualizer.png';
+import genify from './genify.jpg';
+import inventory from './inventory.png';
 export {
+  genaiResume,
+  algoVisualizer,
+  genify,
+  inventory,
   logo,
   logoColor,
   backend,

@@ -40,17 +40,17 @@ export default function LinkItem({
           )}
         </div>
       </div>
-  <div className="relative z-10 flex items-center gap-1 sm:gap-2 shrink-0">
+      <div className="relative z-10 flex items-center gap-1 sm:gap-2 shrink-0">
         {showToggle && (
           <button
             type="button"
             onClick={onToggle}
-    className="inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-brand-deep/50 bg-black/30 text-brand-strong hover:border-brand-strong/70 hover:bg-black/50 transition-colors duration-500"
+            className="inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-brand-deep/50 bg-black/30 text-brand-strong hover:border-brand-strong/70 hover:bg-black/50 transition-colors duration-500"
             aria-label={expanded ? `Collapse ${title}` : `Expand ${title}`}
           >
             <svg
               viewBox="0 0 24 24"
-      className={`h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-500 ${
+              className={`h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-500 ${
                 expanded ? "rotate-180" : "rotate-0"
               }`}
               aria-hidden="true"
