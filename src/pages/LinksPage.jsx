@@ -15,13 +15,13 @@ export default function LinksPage() {
         <header className="mb-6 md:mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-white">Links</h1>
           <p className="text-secondary mt-1">
-            Quick access to coding profiles, socials, projects, and
-            certifications.
+            Quick access to Socials and
+            Certifications.
           </p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {LINK_CATEGORIES.map(({ key }) => (
-            ((key!=="all")&&
+            ((key!=="all" && key!=="coding")&&
             <CategorySection
               key={key}
               categoryKey={key}

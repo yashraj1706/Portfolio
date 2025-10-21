@@ -4,7 +4,7 @@
 export const LINK_CATEGORIES = [
   { key:"all", title: "All"},
   { key: "certifications", title: "Certifications" },
-  { key: "coding", title: "Coding Profiles" },
+  // { key: "coding", title: "Coding Profiles" },
   { key: "socials", title: "Socials" },
   // { key: "projects", title: "Projects" },
 ];
