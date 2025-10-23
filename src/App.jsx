@@ -104,10 +104,11 @@ const App = () => {
 
                   <InViewMount>
                     <Testimonials />
+                    <TechStack />
                   </InViewMount>
 
 
-                    <TechStack />
+                    
 
 
                   {/* <InViewMount>
