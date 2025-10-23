@@ -106,9 +106,9 @@ const App = () => {
                     <Testimonials />
                   </InViewMount>
 
-                  <InViewMount>
+
                     <TechStack />
-                  </InViewMount>
+
 
                   {/* <InViewMount>
                     <Projects />
