@@ -83,49 +83,13 @@ const App = () => {
               <div className="bg-hero-pattern relative z-[9] bg-cover bg-repeat">
                 {/* bg-cover bg-no-repeat bg-center */}
                 <Navbar />
-                <Hero />
+                <Hero /><About /><CanvasRevealEffectDemo /><Experience /><AchievementsMarquee /><Testimonials />
+                    <TechStack /><Contact /><Footer />
 
-                <Suspense fallback={null}>
-                  <InViewMount>
-                    <About />
-                  </InViewMount>
-
-                  <InViewMount>
-                    <CanvasRevealEffectDemo />
-                  </InViewMount>
-
-                  <InViewMount>
-                    <Experience />
-                  </InViewMount>
-
-                  <InViewMount>
-                    <AchievementsMarquee />
-                  </InViewMount>
-
-                  <InViewMount>
-                    <Testimonials />
-                    <TechStack />
-                  </InViewMount>
-
-
-                    
-
-
-                  {/* <InViewMount>
-                    <Projects />
-                  </InViewMount> */}
-
+                    {/* <Projects /> */}
                   <div className="relative z-0">
-                    <InViewMount>
-                      <Contact />
-                    </InViewMount>
                     {/* StarsCanvas stays removed for now */}
                   </div>
-
-                  <InViewMount>
-                    <Footer />
-                  </InViewMount>
-                </Suspense>
               </div>
             </div>
           }
