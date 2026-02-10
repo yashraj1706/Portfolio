@@ -9,7 +9,7 @@ import { SectionWrapper } from "../hoc";
 import "../index.css";
 
 const reviews = [
-  // ... (your reviews array remains the same)
+
   {
     name: "Technology Consulting Intern",
     username: "EY",

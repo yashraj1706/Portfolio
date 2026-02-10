@@ -8,7 +8,8 @@ import { InViewMount } from "./utils/InViewMount";
 import { Analytics } from "@vercel/analytics/react";
 const About = lazy(() => import("./components/About"));
 const Experience = lazy(() => import("./components/Experience"));
-const TechStack = lazy(() => import("./components/TechStack"));
+// const TechStack = lazy(() => import("./components/TechStack"));
+import TechStack from "./components/TechStack";
 const Projects = lazy(() => import("./components/Projects"));
 const Testimonials = lazy(() => import("./components/Testimonials"));
 
