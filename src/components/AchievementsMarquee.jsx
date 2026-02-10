@@ -1,6 +1,7 @@
 import { Marquee } from "./magicui/Marquee"; // Relative path
 import ReviewCard from "./ReviewCard"; // Relative path
 import { motion } from "framer-motion";
+import { ey, oci } from "../assets";
 
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -9,6 +10,18 @@ import "../index.css";
 
 const reviews = [
   // ... (your reviews array remains the same)
+  {
+    name: "Technology Consulting Intern",
+    username: "EY",
+    body: "Working in Tech Consulting (GenAI), applying AI + software systems to real enterprise and business problems.",
+    img: ey,
+  },
+  {
+    name: "OCI Generative AI Professional",
+    username: "Oracle Cloud Infrastructure",
+    body: "Earned OCI Generative AI Professional certification, covering GenAI fundamentals and applied cloud patterns.",
+    img: oci,
+  },
   {
     name: "Top 100 - Semi finals",
     username: "Deloitte Hacksplosion Hackathon'25",
@@ -32,6 +45,12 @@ const reviews = [
     username: "Techathlon'24 - GDSC KIIT",
     body: "Placed 1st in the GDSC-KIIT organized ideathon.",
     img: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB40lEQVR4Ae3VAURDQRgH8KlBNSpCErFQMQkNk7U1lCpkqKlQGiCtYRBIsQnAbMEmwYCqhplmAQikJjDBCrKoTW21La7vz7uZ01tPEfLw99jd7nffd7c3zcTGzJ/mn4AqqIIvvu7mnGmgC09xrDew19IadrT3BCPaX4MAsjbjaHZsKEjPFJ6A+Xhb2GGlxCmXurDDpwst6EVYEYgv5Sz9fRJ0/2gbZjVx8TkEhag6xgOY4gasGASERVERR5SCCFValKqeR6tlQbP3rWNrPeq8mF08e7YaSiKEz2gTh9iQ2FKOCdVmsCHM4W2ugjZvUW/zFg6mdp7yzs0bFl71s9txSxWTqnXVnh8P2oc2AqgDu3G5qqDZ9z5JKKsN4NjcWlm8KHIBjIuDlsq02SqAhXwtaNqtIGzEVzrH+He37yPZ0MmSmu2rmO51KWKtD2IxAj2UNDAx2AxaTjGKMKBKQrtcTmhTlUQj4zk61TPAhn37AyrHBeJgNbSgSVr4TgZOU1Y4CoygACXHIR6W0OQz8aao/7jfjvOT/VlgUGox4PwX6DVuNOaiMhFCUC3GsCHFbxosimpwhkpBVCpVPMiPSjGIyYj0k/EAQmRamqKcUKbF961iUMRRFSKOAQCMp/p/qII/igp+AnlDE4+yoalxAAAAAElFTkSuQmCC",
+  },
+  {
+    name: "McKinsey Forward Program",
+    username: "McKinsey",
+    body: "A global initiative for high-potential future leaders focused on problem-solving, leadership, and digital skills.",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSAQxVQBq2DZfrnWZ-B3Ptskw5aW-0oWAGcg&s",
   },
   {
     name: "SDE Intern",
@@ -94,8 +113,10 @@ const AchievementsMarquee = () => {
         ))}
       </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 md:mt-60 mt-44 mb-9 bg-gradient-to-r from-black dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black
-      mt-44 mb-9  dark:from-background"></div>
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black
+      mt-44 mb-9  dark:from-background"
+      ></div>
     </>
   );
 };

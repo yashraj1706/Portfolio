@@ -83,13 +83,19 @@ const App = () => {
               <div className="bg-hero-pattern relative z-[9] bg-cover bg-repeat">
                 {/* bg-cover bg-no-repeat bg-center */}
                 <Navbar />
-                <Hero /><About /><CanvasRevealEffectDemo /><Experience /><AchievementsMarquee /><Testimonials />
-                    <TechStack /><Contact /><Footer />
-
-                    {/* <Projects /> */}
-                  <div className="relative z-0">
+                <Hero />
+                <About />
+                <CanvasRevealEffectDemo />
+                <Experience />
+                <AchievementsMarquee />
+                <Testimonials />
+                <TechStack />
+                <Contact />
+                <Footer />
+                {/* <Projects /> */}
+                <div className="relative z-0">
                     {/* StarsCanvas stays removed for now */}
-                  </div>
+                </div>
               </div>
             </div>
           }

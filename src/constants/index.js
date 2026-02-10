@@ -39,6 +39,8 @@ import {
   codingNinjas,
   eduskills,
   accenture,
+  ey,
+  eyp,
   internpe,
   knx,
   sih,
@@ -138,6 +140,17 @@ const technologies = [
 ];
 
 const experiences = [
+  {
+    title: "Technology Consulting Intern (Generative AI)",
+    company_name: "EY",
+    icon: eyp,
+    iconBg: "#FFF",
+    date: "Jan 2026 - Present",
+    points: [
+      "Working in Technology Consulting within the Generative AI space, applying AI + software systems to real enterprise and business problems.",
+      "Contributing to solution delivery with an emphasis on reliability, governance, and real-world impact.",
+    ],
+  },
   {
     title: "Associate Software Engineer Intern",
     company_name: "Accenture",

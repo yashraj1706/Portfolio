@@ -25,7 +25,9 @@ const ExperienceCard = ({ experience }) => (
               ? `w-[65%] mt-2 h-[65%] md:mt-[12px] ml-[22.5%] p-[0px] m-auto rounded-none`
               : experience.company_name === "Deloitte"
               ? `md:mt-6 mt-4 w-[95%]`
-              : `w-[100%] h-[100%]`
+              : experience.company_name === "EY"?
+              `w-[65%]  h-[65%] md:mt-[12px] ml-[20%] p-[0px] m-auto rounded-none`
+              :`w-[100%] h-[100%]`
           }`}
         />
       </div>

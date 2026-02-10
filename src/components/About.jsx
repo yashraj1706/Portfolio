@@ -72,37 +72,70 @@ const About = () => {
   return (
     <>
       <motion.div className="mt-10 z-[1000]" variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>Introduction</p>
-        <h2 className={`${styles.sectionHeadText}`}>Overview.</h2>
+        <p className={`${styles.sectionSubText}`}>About</p>
+        <h2 className={`${styles.sectionHeadText}`}>About.</h2>
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Hi, I’m Yash Raj Singh, a <strong>Full-stack and GenAI developer</strong> from Uttarakhand,
-        India, currently in my <strong>final year of B.Tech CSE at KIIT</strong> (Class of 2026).
-        I specialize in building scalable, production-ready apps, AI-powered
-        systems, and intuitive digital experiences across web, mobile, and
-        cloud.
+        {/* Previous About copy (kept for reference)
+        Hi, I’m Yash Raj Singh, a Full-stack and GenAI developer...
+        */}
+        I’m a{" "}
+        <span className="font-semibold text-[#FFE600] drop-shadow-[0_0_10px_rgba(255,230,0,0.25)]">
+          Technology Consulting Intern
+        </span>{" "}
+        in the{" "}
+        {/* <span className="font-semibold exp-bg bg-gradient-to-br from-[#ccf6c8] via-[#00a66d] to-[#1e6139] text-transparent bg-clip-text"> */}
+          Generative AI
+        {/*</span>*/}{" "}
+        space at{" "}
+        <span className="font-semibold text-[#FFE600] drop-shadow-[0_0_10px_rgba(255,230,0,0.25)]">
+          EY
+        </span>
+        , working on applying AI and software systems to real enterprise and
+        business problems.
         <br />
         <br />
-        I’ve led an <strong>Agentic AI</strong> project at <i className="text-purple-300 font-semibold">Accenture</i>, where I developed an asset management platform powered by a <strong>diagnostic AI agent</strong> that integrates with SCADA and IoT systems, syncs real-time data with OpenAI-powered workflows, and reduces asset diagnosis time from hours to minutes. My work combined LangChain, Python logic engines, SQL routing, and LLM-driven recommendations to deliver scalable, real-world solutions.
+        My professional foundation includes hands-on engineering work in
+        enterprise environments, with prior experience at{" "}
+        <span className="font-semibold text-[#A100FF]">Accenture</span>, where I
+        contributed to production-grade platforms involving data integration,
+        backend analytics, and intelligent interfaces.
         <br />
         <br />
-        Beyond AI, I bring deep expertise in full-stack development using React,
-        Next.js, Node.js, PostgreSQL, Firebase, and AWS, building dashboards,
-        authentication flows, resume scorers, and mobile apps with clean UI and
-        robust APIs.
+        My engagement with Generative AI developed alongside this work and now
+        continues at EY, where it is applied within technology consulting
+        contexts that emphasize{" "}
+        <span className="font-semibold text-slate-100">
+          reliability, governance, and real-world impact
+        </span>
+        .
         <br />
         <br />
-        I’m also part of the Google GenAI Exchange Program and Coursera-certified in <strong>Agentic AI workflows, Generative AI(RAG pipelines, LangChain, Prompt Engineering, LLMs, Transformers, NLP, Vector Stores.), Machine Learning, Deep Learning</strong>; skills I honed through hands-on projects and specialized training programs.
-        <br/>I’m a Top 100 finalist in Deloitte Hacksplosion (12K+
-        participants), a Smart India Hackathon regional finalist, and an open-source
-        contributor and mentor to 100+ juniors in DSA and web dev.
+        Across roles, I’ve worked on backend services, system integrations, and
+        full-stack applications when needed, always with a focus on{" "}
+        <span className="font-semibold text-slate-100">
+          clarity, scalability, and long-term usability
+        </span>
+        . I’m particularly interested in the intersection of technology and
+        consulting, where technical execution meets problem framing and context.
         <br />
+        <br />I hold a <span className="font-semibold text-slate-100">Computer Science</span> background{" "}
+        <span className="font-semibold text-slate-100">
+          (Class of 2026)
+        </span>{" "}
+        and have been recognized through competitive technical forums,
+        hackathons, and certifications, which helped build a strong foundation
+        in problem-solving and execution early in my career.
         <br />
-        I’m passionate about building meaningful tech, learning fast, and
-        solving hard problems with elegant code.
+        <br />I value environments that emphasize{" "}
+        <span className="font-semibold text-slate-100">
+          ownership, rigor, and impact
+        </span>
+        , and I’m driven by opportunities to contribute to systems that perform
+        at scale and deliver meaningful, real-world outcomes.
       </motion.p>
       {/* <div className="mt-20  cards flex flex-wrap gap-10 " ref={cardsRef}>
         {services.map((service, index) => {
